@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assest/cart/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assest/cart/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assest/cart/favicon-16x16.png">
+    <link rel="manifest" href="assest/cart/site.webmanifest">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        // Pass environment variables from HTML to JS
+        window.env = {
+            databaseURL: 'https://cart-b8b19-default-rtdb.asia-southeast1.firebasedatabase.app/'
+        };
+    </script>
+    <style>
+        body{
+            background-color: #cbefe0;
+            user-select: none;
+        }
+        .heading{
+            color: #2baa76;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        .button{
+            background-color: #2baa76; 
+            color: beige; 
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .button:hover, .button:active{
+            color: beige;
+            border: #2baa76 2px;
+        }
+
+        .cursor-pointer {
+            cursor: pointer; /* Sets the cursor to pointer */
+            transition: 0.2s;
+        }
+        .cursor-pointer:hover{
+            background-color: #cbefe0;
+            /* color: beige; */
+            transition: 0.2s;
+        }
+        .list{
+            font:bold 16px sans-serif;
+            color: #2baa76;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 w-50 w-100">
+        <div class="card mx-auto p-5 w-75 w-100">
+            <h2 class="text-center heading">
+                Cart
+            </h2>
+            <div class="image d-flex justify-content-center align-items-center">
+                <img width="150" height="150" src="assest/cart.png" class="mr-4" alt="cart image">
+            </div>
+            <form id="myForm" >
+                <div class="form-group flex-grow-1">
+                    <input type="text" class="form-control text-center mx-auto" id="inputText" placeholder="Item...">
+                </div>
+                <button type="submit" class="btn form-control button mx-auto">
+                    Add to Cart
+                </button>
+            </form>
+        </div>
+        <div class="card mx-auto w-75 w-100">
+            <ul class="cartList list d-flex justify-content-center align-items-center list-unstyled flex-wrap w-100">
+                
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Custom JS to log input value -->
+    <script src="index.js" type="module"></script>
+    <script src="db.js" type="module"></script>
+</body>
+</html>
